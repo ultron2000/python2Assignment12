@@ -26,10 +26,9 @@ def student_information():
     print("Student Information")
     print('=' * 80)
 
-
     # for loop for displaying the data
     for student_id, student_info in data.students.items():
-        print('ID: ', student_id, student_info.get('firstName'), student_info.get('lastName'))
+        print('ID:', student_id, student_info.get('firstName'), student_info.get('lastName'))
 
         print('\tGroups: ', end='')
         for group in student_info.get('groups'):
@@ -50,7 +49,22 @@ def all_sports_list():
     print("All Sports")
     print('=' * 80)
 
-    sports = list()
+    all_sports = list()
+
+    #print('\tSeasons: ')
+    # , sports_set
+    for season in data.sports.values():
+        # print('\t' + season + ':')
+        all_sports.extend(list(season))
+    print()
+
+    all_sports.sort()
+
+    #for sport in all_sports:
+    #    print('\t' + sport)
+
+    for season in all_sports:
+        print(f'{all_sports}', end=', ')
 
 
 # building the sports list

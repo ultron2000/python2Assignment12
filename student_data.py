@@ -1,8 +1,8 @@
 sports = {
-    'fall': {'football', 'volleyball', 'cross country'},
-    'winter': {'basketball', 'wrestling'},
-    'spring': {'track'},
-    'summer': {'baseball', 'softball'}
+    'Fall': {'football', 'volleyball', 'cross country'},
+    'Winter': {'basketball', 'wrestling'},
+    'Spring': {'track'},
+    'Summer': {'baseball', 'softball'}
 }
 
 students = {
