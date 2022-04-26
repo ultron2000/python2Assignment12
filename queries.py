@@ -6,8 +6,10 @@ import student_data as data
 ###########################################################################################
 def list_students(student_ids):
     for student_id in student_ids:
-        print(student_id, data.students[student_id]['firstName'],
-              data.students[student_id]['lastName'])
+        print(student_id,
+              data.students.get([student_id]).get(['firstName']),
+              data.students.get([student_id]).get(['lastName'])
+        )
 
 
 ###########################################################################################
@@ -25,16 +27,19 @@ def student_information():
     print('=' * 80)
 
 
-# for loop for displaying the data
-# for key (student id), value (student info dict) in 2D data.students dict items
-# 	display student id (key) and name (value)
-#
-# 	for each group in student’s groups set
-# 		display the student’s group set using a print with end=’, ‘
-#
-# 	for key (class), value (class grades dict) in 2D grades dict items
-# 		if student id (outer key) in class grades dict
-#			display class (key), and student’s grade list (value)
+    # for loop for displaying the data
+    for student_id, student_info in data.students.items():
+        print('ID: ', student_id, student_info.get('firstName'), student_info.get('lastName'))
+
+        print('\tGroups: ', end='')
+        for group in student_info.get('groups'):
+            print(group, end=', ')
+        print()
+
+        for subject, grades in data.grades.items():
+            if student_id in grades:
+                print('\t' + subject, grades.get(student_id))
+        print()
 
 
 ###########################################################################################
