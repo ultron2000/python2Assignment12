@@ -140,6 +140,7 @@ def sue_smith_class_list():
     # for loop for displaying sue_smith_classes list
     print(*sue_smith_classes, sep='\n')
 
+
 def students_in_science_not_math():
     """
     Displays the students in the science class that aren't in the math class
@@ -283,7 +284,6 @@ def student_classes_same_as_sue_smith():
         if classes == sue_smith_classes:
             # append student id (key) to same_as_sue_smith list
             same_as_sue_smith.append(student_id)
-
 
     # sort same_as_sue_smith list
     same_as_sue_smith.sort()
